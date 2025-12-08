@@ -188,7 +188,44 @@
   (Que inclusive consome muita memória e seu computador fica lento).
 </h3>
 <p></p>
+<h2>Atualização de 08/12/2025:</h2>
 
+<h3>Como mexer no firewall pelo terminal Linux?</h3>
+<h3>Bem quando nós queremos segurança a primeira coisa que pensamos é no firewall, já que é o firewall que permite
+  o que entra e o que sai do sistema baseado em regras e bem é possível mexer no firewall através do terminal e claro
+  só irei mostrar os comandos do firewall que são mais usados, já que tem alguns que não irão ser tão úteis, já que são bem 
+  específicos.
+</h3>
+<p></p>
+<h3>sudo ufw status: </h3>
+<h3>Com este ele só avisa se o seu firewall está ativo ou não.</h3>
+<p></p>
+<h3>sudo ufw enable:</h3>
+<h3>Com este comando você ativa o firewall</h3>
+<p></p>
+<h3>sudo ufw disable:</h3>
+<h3>Com este comando você desativa o firewall</h3>
+<p></p>
+<h3>sudo ufw allow (porta):</h3>
+<h3>Com este comando você permite uma porta em específica, abaixo estará um exemplo:</h3>
+<img src="ufw1.png" width="360" height="360">
+<h3>Na imagem de exemplo eu acabei de permitir a porta 80.</h3>
+<p></p>
+<h3>sudo ufw deny (Porta):</h3>
+<h3>Com este comando você bloqueia uma porta em específica, abaixo estará uma imagem de exemplo.</h3>
+<img src="ufw2.png" width="360" height="360">
+<h3>Na imagem de exemplo eu acabei de bloquear a porta 80.</h3>
+<p></p>
+<h3>sudo ufw delete allow (porta):</h3>
+<h3>Com este comando você remove uma regra, abaixo estará um exemplo:</h3>
+<img src="ufw3.png" width="360" height="360">
+<h3>Na imagem por exemplo, eu acabei de deletar a regra da porta 80.</h3>
+<p></p>
+<h3>Alguns comandos bem úteis também:</h3>
+<h3>sudo ufw status numbered: Com este comando você consegue ver algumas regras existentes no seu firewall.</h3>
+<h3>sudo ufw limit ssh: Limita tentativas de conexão (Perfeita para se proteger de ataques de DDoS).</h3>
+<h3>sudo ufw status verbose: Ele é tipo o "sudo ufw status" só que ele te dá uma visão mais avançada sobre seu firewall.</h3>
+<p></p>
 
 </body>
 </html>
