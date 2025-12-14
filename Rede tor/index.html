@@ -48,6 +48,54 @@
     e bem a ideia era proteger comunicações sensíveis de possíveis espionagens já que naquela época se passava
     na guerra fria e assim nasceu a rede tor.
 </h3>
+<p></p>
+<h2>Atualização de 14/12/2025:</h2>
+<h3>Sabia que é possível usar a rede tor no seu navegador? Pois é! Isso é possível e eu vou te mostrar como fazer isso.</h3>
+<p></p>
+<img src="tor1.png" width="360" height="360"> <h3>Primeiro passo é abrir o seu navegador, e relaxa não precisa ser só o firefox,
+    você pode usar qualquer navegador como o chrome, safari, librewolf ou qualquer outro.
+</h3>
+<p></p>
+<img src="tor2.png" width="360" height="360"> <h3>Após isso entre nas configurações do seu navegador (No caso clicando em um simbolo que pode ter 
+    3 pontos ou 3 barras dependendo do seu naveagador, que fica lá em cima perto da área onde você faz pesquisa).
+</h3>
+<p></p>
+<img src="tor3.png" width="360" height="360"> <h3>Agora você vai tentar encontrar isso ou algo parecido como "Configuração de rede".</h3>
+<p></p>
+<img src="tor4.png" width="360" height="360"> <h3>Agora quando você clicar pra configurar, nessa parte do proxy manual, selecione o domínio SOCKS
+    e utilize esse IP: 127.0.0.1, já a porta use a porta 9050 e ative SOCKS5 e claro abaixo também ative a opção "proxy DNS ao usar SOCKS v5" ou 
+    se não tiver escrito isso vai estar escrito algo semelhante e após isso clique em "Ok".
+</h3>
+<p></p>
+<h3>Certo, aprendemos a usar o tor no navegador sem ser o tor, mas aqui vai um aviso, ele não garante total anônimato, então... Nem sempre é bom utilizar o tor 
+    no navegador por questões que primeiro: O seu navegador que você utiliza no dia-a-dia não é o tor browser e segundo que também pode limitar alguns sites.
+</h3>
+<h3>E sim eu ensinei isso a você porque achei interessante até que ponto a rede tor pode chegar.</h3>
+<p></p>
+<h3>Mas calma lá ainda não acabou, é possível usar a rede tor no Linux (Em alguns outros sistemas operacionais também) e aqui vai o tutorial:</h3>
+<h3>Instale o tor usando o comando no terminal: sudo apt install tor</h3>
+<h3>Use o comando: sudo systemctl status tor (Com esse comando você vai ver se está ativo ou não, abaixo terá uma imagem de exemplo)</h3>
+<img src="terminaltor1.png" width="360" height="360"> <h3>E você deve estar me perguntando "Como diabos você sabe que está conectado na rede tor com esse monte de texto?"
+    e muito simples meu caro visitante, se você perceber abaixo do "sudo" tem um circulo e a lógica é a seguinte: Se estiver verde, tá ativo e se estiver sem nada: Não está ativo
+    e como pode perceber não estou ativo na rede tor.
+</h3>
+<p></p>
+<h3>Use esse comando para ativar a rede tor: sudo systemctl start tor</h3>
+<img src="terminaltor2.png" width="360" height="360"> <h3>Como pode perceber o círculo agora está verde, e então agora esou conectado na rede tor.</h3>
+<p></p>
+<h3>Comandos de configuração:</h3>
+<h3>export http_proxy="socks5://127.0.0.1:9050" (Com esse comando você configura o tor para HTTP)</h3>
+<h3>export https_proxy="socks5://127.0.0.1:9050" (Com esse comando você configura o tor para HTTPS)</h3>
+<h3>export ftp_proxy="socks5"://127.0.0.1:9050" (Com esse comando você configura o tor para FTP)</h3>
+<p></p>
+<h3>Certo até mostrei como que se ativa o proxy da rede tor mas não ensinei a como desativar, e então aqui está:</h3>
+<h3>No terminal use o comando: sudo systemctl stop tor (Com esse comando você desativa o proxy da rede tor)
+<h4>Aviso: Não use tanto a rede tor para o dia-a-dia, já que o computador vai ficar lento devido a privacidade.</h4>
+<p></p>
+<h3>Bem, tem como ativar o proxy da rede tor no windows e no MacOS também, mas são de formas diferentes e até mais fáceis que o Linux</h3>
+<h3>Se quiser saber o que é um Proxy entre no tópico: #Outras informações importantes#</h3>
+<p></p>
+
 
 </body>
 </html>
