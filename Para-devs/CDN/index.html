@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Devs Segurança</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+
+      /* Estilo para os links para ficarem destacados */
+      a {
+        color: #00FF00; /* Verde neon, típico de código */
+        text-decoration: none; /* Retira o sublinhado */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Sublinha o link quando passar o mouse */
+      }
+    </style>
+</head>
+<body>
+<h1>Segurança para o seu site:</h1>
+<p></p>
+<h2>Bem por aqui vou recomendar algumas CDN's que tenho conhecimento sobre e claro irei recomendar firewalls e etc.
+</h2>
+<p></p>
+<h2>CDN: </h2>
+<h3>O que é uma CDN?:</h3>
+<h3>A explicação do que é uma CDN foi explicada no tópico #Informações importantes#</h3>
+<h3>Recomendações de CDN:</h3>
+<h3>Cloudflare, AWS Cloudfront, Fastly, KeyCDN, StackPath(antes conhecido como MaxCDN), Google Cloud CDN.</h3>
+<p></p>
+<h2>Certificado SSL (HTTPS):</h2>
+<h3>O que é HTTPS?</h3>
+<h3>A explicação também estará no tópico #Informações importantes#</h3>
+<h3>Recomendações de certificado SSL/Como garantir um certificado SSL:</h3>
+<h2>1)Escolha o tipo de certificado SSL sendo eles: Certificado SSL de domínio único para um domínio único (www.site.com), Certificado SSL Wildcard 
+    para proteger um domínio e todos os seus subdomínios (*.seusite.com), Certificado SSL Multi-Domínio para proteger múltiplos domínios com um único certificado
+(site1.com, site2.com, site3.com). </h2>
+<h2>2)Escolha uma autoridade certificadora como por exemplo: Let's encrypt (gratuito), Comodo, DigiCert, GlobalSign.</h2>
+<h3>links oficiais:</h3>
+<h3>Let's encrypt: <a href="https://letsencrypt.org/pt-br/">https://letsencrypt.org/pt-br/</a></h3>
+<h3>Comodo: <a href="https://comodosslstore.com/">https://comodosslstore.com/</a></h3>
+<h3>DigiCert: <a href="https://www.digicert.com/pt">https://www.digicert.com/pt</a></h3>
+<h3>GlobalSign: <a href="https://www.globalsign.com/pt-br">https://www.globalsign.com/pt-br</a></h3>
+<h2>3)Solicite o certificado SSL (Sim a maneira como você solicita o SSL depende de onde o seu site está hospedado).</h2>
+<h3>Maneiras de solicitar um certificado SSL:</h3>
+<h3>a)Gerar uma solicitação de assinatura de certificado (CSR)</h3>
+<h3>b)Encomendar o certificado</h3>
+<h2>4) Instalar o certificado SSL no servidor</h2>
+<h3>Formas de instalação: Algumas diretrizes gerais</h3>
+<h3>a)Hospedagem compartilhada (Exemplo cPanel)</h3>
+<h3>b)Hospedagem VPS ou servidor dedicado</h3>
+<h2>5)Verificar instalação (Não é obrigatório, mas é sempre bom)</h2>
+<h3>Ferramenta online para verificação de instalação de certificado SSL: <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></h3>
+<h2>6)Forçar o uso de HTTPS</h2>
+<h3>Bem por aqui você vai ter que configurar um redirecionamento 301 em um arquivo .htacces (Se caso usar apache).</h3>
+<h3>Exemplo de redirecionamento no .htacess:</h3>
+<h3>RewriteEngine On</h3>
+<h3>RewriteCond %{HTTPS} off</h3>
+<h3>RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</h3>
+<h3>Agora se você utiliza Nginx:</h3>
+<h3>server {</h3>
+    <h3>listen 80;</h3>
+    <h3> server_name www.seusite.com;</h3>
+    <h3>return 301 https://$server_name$request_uri;</h3>
+    }
+<h2>7)Atualizar links internos</h2>
+<p></p>
+<h2>Firewall:</h2>
+<h3>O que é um firewall? (WAF)</h3>
+<h3>Isso já foi dito no tópico #Informações importantes#</h3>
+<h3>Recomendações de firewall: Cloudflare Web Application Firewall, Sucuri Website Firewall, Wordfence, AWS WAF, imunify 360</h3>
+<h3>Links oficiais:</h3>
+<h3>Cloudflare Web Application Firewall: <a href="https://www.cloudflare.com/pt-br/application-services/products/waf/">https://www.cloudflare.com/pt-br/application-services/products/waf/</a></h3>
+<h3>Sucuri Website Firewall: <a href="https://sucuri.net/website-firewall/">https://sucuri.net/website-firewall/</a></h3>
+<h3>Wordfence: <a href="https://www.wordfence.com/">https://www.wordfence.com/</a></h3>
+<h3>AWS WAF: <a href="https://aws.amazon.com/pt/waf/">https://aws.amazon.com/pt/waf/</a></h3>
+<h3>imunify 360: <a href="https://imunify360.com/">https://imunify360.com/</a></h3>
+<p></p>
+<h2>Autentificação de 2 fatores: É um método de segurança que exige dois tipos de identificação para possuir acesso ao sistema.</h2>
+<h3>Como fazer a autentificação de 2 fatores?:</h3>
+<h3>Ative o 2FA no painel de administração de plataformas como Wordpress, Shopify ou Magento, ou também você pode utilizar plugins
+    de segurança para implementar a funcionalidade.
+</h3>
+<h2>Links de ajuda:</h2>
+<h3>Wordpress: <a href="https://wordpress.com/pt-br/support/seguranca/autenticacao-em-duas-etapas/">https://wordpress.com/pt-br/support/seguranca/autenticacao-em-duas-etapas/</a></h3>
+<h3>Shopify: <a href="https://help.shopify.com/en/manual/your-account/logging-in/two-step-authentication">https://help.shopify.com/en/manual/your-account/logging-in/two-step-authentication</a></h3>
+<h3>Magento: <a href="https://www.magenteiro.com/blog/magento-2/como-resetar-2fa-admin/">https://www.magenteiro.com/blog/magento-2/como-resetar-2fa-admin/</a></h3>
+<p></p>
+<h2>Backup Regular e Offsite: São cópias dos arquivos e banco de dados armazenadas em servidores ou serviços de armazenamento externo (off-site)</h2>
+<h2>Como fazer isso?:</h2>
+<h3>Configure backups automáticos diários ou semanais usando ferramentas como o UpdraftPlus ou também serviços de armazenamento na nuvem
+    como por exemplo no Google Drive ou também no Proton Drive (Se caso você for um paranoico igual eu).
+</h3>
+<p></p>
+
+

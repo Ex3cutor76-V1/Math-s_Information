@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Rede tor proxy</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+
+      /* Estilo para os links para ficarem destacados */
+      a {
+        color: #00FF00; /* Verde neon, típico de código */
+        text-decoration: none; /* Retira o sublinhado */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Sublinha o link quando passar o mouse */
+      }
+    </style>
+</head>
+<body>
+<h1>Proxy da rede tor:</h1>
+<p></p>
+<h2> Bem a explicação do que é um proxy, vai estar no tópico #Outras informações importantes#</h2>
+<p></p>
+<h3>Sabia que é possível usar a rede tor no Linux (Em alguns outros sistemas operacionais também) e aqui vai o tutorial:</h3>
+<h3>Instale o tor usando o comando no terminal: sudo apt install tor</h3>
+<h3>Use o comando: sudo systemctl status tor (Com esse comando você vai ver se está ativo ou não, abaixo terá uma imagem de exemplo)</h3>
+<img src="terminaltor1.png" width="960" height="360"> <h3>E você deve estar me perguntando "Como diabos você sabe que está conectado na rede tor com esse monte de texto?"
+    e muito simples meu caro visitante, se você perceber abaixo do "sudo" tem um circulo e a lógica é a seguinte: Se estiver verde, tá ativo e se estiver sem nada: Não está ativo
+    e como pode perceber não estou ativo na rede tor.
+</h3>
+<p></p>
+<h3>Use esse comando para ativar a rede tor: sudo systemctl start tor</h3>
+<img src="terminaltor2.png" width="960" height="360"> <h3>Como pode perceber o círculo agora está verde, e então agora esou conectado na rede tor.</h3>
+<p></p>
+<h3>Comandos de configuração:</h3>
+<h3>export http_proxy="socks5://127.0.0.1:9050" (Com esse comando você configura o tor para HTTP)</h3>
+<h3>export https_proxy="socks5://127.0.0.1:9050" (Com esse comando você configura o tor para HTTPS)</h3>
+<h3>export ftp_proxy="socks5"://127.0.0.1:9050" (Com esse comando você configura o tor para FTP)</h3>
+<p></p>
+<h3>Certo até mostrei como que se ativa o proxy da rede tor mas não ensinei a como desativar, e então aqui está:</h3>
+<h3>No terminal use o comando: sudo systemctl stop tor (Com esse comando você desativa o proxy da rede tor)
+<h4>Aviso: Não use tanto a rede tor para o dia-a-dia, já que o computador vai ficar lento devido a privacidade.</h4>
+<p></p>
+<h3>Bem, tem como ativar o proxy da rede tor no windows e no MacOS também, mas são de formas diferentes e até mais fáceis que o Linux</h3>
+<h3>Se quiser saber o que é um Proxy entre no tópico: #Outras informações importantes#</h3>
+<p></p>
+
+</body>
+</html>

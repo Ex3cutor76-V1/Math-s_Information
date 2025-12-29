@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: OSINT-FVT3</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+
+      /* Estilo para os links para ficarem destacados */
+      a {
+        color: #00FF00; /* Verde neon, típico de código */
+        text-decoration: none; /* Retira o sublinhado */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Sublinha o link quando passar o mouse */
+      }
+    </style>
+</head>
+<body>
+<h1>Ferramentas para teste de penetração e vulnerabilidades:</h1>
+<p></p>
+<img src="nmap.png" width="660" height="360"> 
+<h3>A primeira ferramenta é o nmap, ele é uma ferramenta bem simples de varredura e scan de 
+  portas TCP/IP e UDP, e aqui nesta imagem por exemplo fiz um scan simples do IP do Youtube.
+</h3>
+<h3>Sabia que o nmap pode ser usado no windows? Sim ele pode, aqui está o link: <a href="https://nmap.org/download.html#windows">https://nmap.org/download.html#windows</a></h3>
+<h3>Como instalá-lo no terminal: abra o terminal e use esse comando: sudo apt install nmap
+</h3>
+<h3>Se quiser saber se realmente está instalado use: nmap -h (Com esse comando te mostrará outros comandos que você pode usar com o nmap)</h3>
+<p></p>
+<img src="sqlmap.png" width="660" height="660">
+<h3>O sqlmap serve para testes de injeção SQL em alguns sites e até mesmo explora algumas falhas de injeção SQL 
+  e assumir banco de dados e nesta imagem de exemplo apenas usei o -h para que ele me mostre outros comandos que posso 
+  utilizar.
+</h3>
+<h3>Como instalar o SQLmap: </h3>
+<h3>Abra o terminal e use esse comando: git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev</h3>
+<h3>Use o comando "ls" para listar e se caso tiver um "sqlmap-dev" perfeito.</h3>
+<h3>Para usar é só usar: cd sqlmap-dev</h3>
+<h3>E agora para finalizar use: python3 sqlmap.py -h (Sempre recomendo usar "-h" para que mostre outros comandos 
+  porque com "-h" você estaria pedindo ajuda para a ferramenta.)
+</h3>
+<p></p>
+<img src="nikto.png" width="660" height="360">
+<h3>O nikto é uma ferramenta perfeita para scaneamento de vulnerabilidades de servidores web, essa ferramenta 
+  simplesmente busca falhas conhecidas, configurações inseguras e versões vulneráveis de alguns software's, nesta foto
+  por exemplo eu utilizei o -h para me mostrar os comandos que podem ser usados nessa ferramenta.
+</h3>
+<h3>Como instalar o nikto:</h3>
+<h3>Abra o terminal e utilize esse comando: git clone https://github.com/sullo/nikto</h3>
+<h3>Após isso use: cd nikto/program</h3>
+<h3>E para usar: ./nikto.pl -h (O -h irá te mostrar alguns comandos e se caso quiser usar esses comandos
+  substitua o "-h" por algum desses comandos.)
+</h3>
+<p></p>
+<img src="wpprobe.png" width="660" height="360">
+<h3>O WPProbe é um scanner de plugins do wordpress que muitas vezes esses plugins são desatualizados e claro contém algumas vulnerabilidades 
+  e bem com esse WPProbe é perfeito para captar essas vulnerabilidades e nesta imagem de exemplo usei -h (Como sempre) para mostrar alguns comandos.
+</h3>
+<h3>Como instalar o WPProbe:</h3>
+<h3>Entre no terminal e use: git clone https://github.com/Chocapikk/wpprobe</h3>
+<h3>Entre no repositório: cd wpprobe</h3>
+<h3>Após isso use: go mod tidy</h3>
+<h3>Construa o binário com esse comando: go build -o wpprobe</h3>
+<h3>Comandos para você usar que são úteis: </h3>
+<h3>Scan básico: ./wpprobe scan -u (URL do site)</h3>
+<h3>Scan com força bruta (Literalmente olha o site inteiro): ./wpprobe scan -u (URL do site) --mode bruteforce</h3>
+<h3>Scan com modo hibrído (um equilibrio de furtividade e minuciosidade): ./wpprobe scan -u (URL do site) --mode hybrid</h3>
+<p></p>
+<img src="wafw00f.png" width="660" height="660">
+<h3>A ferramenta wafw00f é uma ferramenta que detecta se um site está protegido por algum WAF (Web application 
+  Firewall) e quando possível identifica qual fornecedor/serviço de WAF (Um exemplo é o Cloudflare ou o Azure da microsoft) e 
+  nessa imagem de exemplo usei o -h para me mostrar os comandos que posso utilizar.
+</h3>
+<h3>Como instalar: </h3>
+<h3>Abra o terminal e use: python3 -m pip install wafw00f --break-system-packages</h3>
+<h3>E para usar a ferramenta use: wafw00f (URL do site)</h3>
+<h3>E pronto com esse comando você faz um scan básico. (Se quiser se aprofundar use "-h" que mostrará comandos)</h3>
+<p></p>
+<h3>Bem, nessas ferramentas eu não mostrei de forma em prática porque eu prefiro deixar vocês praticarem, para sentirem a experiência
+  de estar em um terminal utilizando comandos como esses, e sim só deixei ferramentas que tenho conhecimento e que sei utilizar.
+</h3>
+<p></p>
+<img src="XSpear.png" width="660" height="660">
+<h3>O XSpear é uma ferramenta para testes de XSS, na imagem acima por exemplo utilizei "-h" como sempre 
+  para me mostrar alguns comandos que posso usar na ferramenta.
+</h3>
+<h3>Como instalar o XSpear:</h3>
+<h3>Primeiro abra o terminal e use o comando: gem install XSpear</h3>
+<h3>Após isso use o comando: gem install XSpear-{version}.gem (Esse "version" seria meio que uma versão do XSpear, abaixo estará um exemplo de como ver a versão para a instalação.)</h3>
+<img src="XSpear_exemplo1.png" width="660" height="660">
+<h3>Para olhar a versão vá nessa página: <a href="https://github.com/hahwul/XSpear">https://github.com/hahwul/XSpear</a></h3>
+<h3>E após isso clicar no texto em azul escrito como "latest"</h3>
+<img src="XSpear_exemplo2.png" width="660" height="660">
+<h3>Após isso irá aparecer esta tela que logo irá mostrar algumas versões e você terá que baixar o arquivo: XSpear-1.4.1.gem </h3>
+<h3>Agora adicionar essa linha no seu Gemfile: gem 'XSpear'</h3>
+<h3>E bem pode aparecer um erro mas relaxa, agora só baixar algumas dependências: </h3>
+<h3>para baixar as dependências use: gem install colorize
+ gem install selenium-webdriver
+ gem install terminal-table
+ gem install progress_bar
+</h3>
+<h3>E para usar use: bundle</h3>
+<h3>Se caso o seu for igual o meu que também deu errado mas consegui instalar normalmente use: XSpear -h</h3>
+<h3>E assim é a instalação do XSpear que sim admito ter sido bem complicado pra mim e se foi confuso pra você sinto muito e posso tentar melhorar.</h3>
+<p></p>
+
+</body>
+</html>

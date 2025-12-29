@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: OSINT-FVT1</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+    </style>
+</head>
+<body>
+    <h1>Investigar pessoas:</h1>
+    <img src="Ip-tracer.png" width="960" height="660">
+<h3>O IP-tracer é uma ferramenta para rastrear um IP e passar algumas informações, nessa imagem por exemplo 
+  utilizei o IP-tracer para rastrear o IP do youtube, e bem claro mais um aviso: Não existe uma ferramenta que rastrea a localização exata
+  de um dispositivo ou IP, então saiba que esse longitude e latitude é apenas o mais próximo onde o provedor do IP está localizado.
+</h3>
+<h3>Como instalar o IP-tracer:</h3>
+<h3>Abra o terminal e use esse comando: apt update (Esse comando faz uma lista de atualização dos seus softwares instalados via apt além de 
+  listar atualizações do sistema.)</h3>
+  <h3>Se caso você não tem o Git (Que no caso é impossível porque ele já vem instalado nas distros Linux) use: apt install git -y </h3>
+  <h3>Bem se caso você já tem ou já instalou use: git clone https://github.com/rajkumardusad/IP-Tracer.git</h3>
+  <h3>Entre no repositório: cd IP-Tracer</h3>
+  <h3>Após isso dê a permissão a esse software de ser usado no terminal ou como aplicativo com: chmod +x install</h3>
+<h3> Agora para saber se realmente instalou use: sh install.</h3>
+<h3>Se caso não funcionar ou se caso o seu foi igual o meu que foi bem diferente use: trace -m (Com esse comando ele mostra informações sobre seu IP)</h3>
+<h3>Comando útil: trace -t (IP do alvo)</h3>
+<h3>Com este comando você pode ver informações de um IP.</h3>
+<p></p>
+<img src="Namechk.png" width="660" height="660">
+<h3>O Namechk é uma ferramenta que te permite buscar o nome de usuário, aqui na imagem por exemplo apenas utilizei ./namechk e ele 
+  me mostrou algumas opções de comandos para usar.
+</h3>
+<h3>Como instalar o Namechk:</h3>
+<h3>Abra o terminal e clone o repositório git: git clone https://github.com/TheRipperJhon/namechk.git</h3>
+<h3>Abra o repositório: cd namechk</h3>
+<h3>Agora altere a permissão da ferramenta usando: chmod +x namechk.sh</h3>
+<h3>Agora se você quiser usar use: ./namechk.sh -h (Com esse comando ele mostra os comandos que você pode usar.)</h3>
+<p></p>
+<img src="sherlock.png" width="660" height="660">
+<h3>A ferramenta sherlock também é uma ótima ferramenta para buscar um nome de usuário, nesta imagem por exemplo
+  busquei o nome de um usuário com o nome de "Daniel" e isso me deu 278 resultados.
+</h3>
+<h3>Como instalar o sherlock:</h3>
+<h3>Abra o terminal e use: sudo apt install sherlock</h3>
+<h3>Se caso quiser confirmar que o sherlock está instalado use: apt search sherlock</h3>
+<h3>Como usar: sherlock (Nome de usuário)</h3>
+<h3>E pronto ele irá mostrar uma lista de sites onde esse username foi encontrado.</h3>
+<p></p>
+<img src="Ghunt.png" width="560" height="360">
+<h3>O ghunt é uma ferramenta que pode te ajudar a pegar algumas informações sobre um email, claro que são poucas informações, entretanto,
+  será útil.
+</h3>
+<h3>Como instalar o Ghunt:</h3>
+<h3>Primeiro abra o terminal e digite esse comando: pip3 install pipx</h3>
+<h3>Depois use esse comando: pipx ensurepath</h3>
+<h3>Após isso use: pipx install ghunt</h3>
+<h3>Agora para usar, use: ghunt login e use a extensão do ghunt para sincronizar (Recomendo usar o base64)</h3>
+<h3>Agora se quiser saber mais comandos use: ghunt -h</h3>
+<h4>Aviso: Sim é preciso do login para a ferramenta funcionar.</h4>
+<p></p>
+
+</body>
+</html>
