@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal segurança</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+    </style>
+</head>
+<body>
+<h1>Segurança com o terminal:</h1>
+<p></p>
+<h2>Bem aqui vou te mostrar alguns comandos para a sua segurança no linux.</h2>
+<p></p>
+<h3>clamscan: </h3>
+<h3>Bem além desse comando ser muito importante ele é ótimo para se caso no Linux você se sente com medo de pegar vírus, já que o 
+  clamscan na verdade é um antivírus da ClamAV que é um antivírus opensource que pode ser usado via terminal.
+</h3>
+<h3>Como instalar:</h3>
+<h3>Só usar o comando: sudo apt install clamav</h3>
+<h3>Como atualizar:</h3>
+<h3>Sim até eu fico impressionado disso, mas para atualizar ele é bem diferenciador já que você usa esse comando: sudo freshclam
+</h3>
+<p></p>
+<h2>iftop:</h2>
+<h3>O comando iftop é semelhante ao top e o btop, a única diferença? É que ele serve para monitorar o tráfego de rede em tempo real
+    e sim ele só consegue ser usado se você for root (Para entrar como root no terminal só usar sudo su)
+</h3>
+<h3>E bem com esse comando durante o monitoramento em tempo real do tráfego de rede ele vai mostrar coisas como:
+    IP, portas, taxa de transferência, bytes enviados e recebidos
+</h3>
+<h3>Para instalar use: sudo apt-get install iftop
+</h3>
+<p></p>
+<h2>Como mexer no firewall pelo terminal Linux?</h2>
+<h3>Bem quando nós queremos segurança a primeira coisa que pensamos é no firewall, já que é o firewall que permite
+  o que entra e o que sai do sistema baseado em regras e bem é possível mexer no firewall através do terminal e claro
+  só irei mostrar os comandos do firewall que são mais usados, já que tem alguns que não irão ser tão úteis, já que são bem 
+  específicos.
+</h3>
+<p></p>
+<h3>sudo ufw status: </h3>
+<h3>Com este ele só avisa se o seu firewall está ativo ou não.</h3>
+<p></p>
+<h3>sudo ufw enable:</h3>
+<h3>Com este comando você ativa o firewall</h3>
+<p></p>
+<h3>sudo ufw disable:</h3>
+<h3>Com este comando você desativa o firewall</h3>
+<p></p>
+<h3>sudo ufw allow (porta):</h3>
+<h3>Com este comando você permite uma porta em específica, abaixo estará um exemplo:</h3>
+<img src="ufw1.png" width="660" height="360">
+<h3>Na imagem de exemplo eu acabei de permitir a porta 80.</h3>
+<p></p>
+<h3>sudo ufw deny (Porta):</h3>
+<h3>Com este comando você bloqueia uma porta em específica, abaixo estará uma imagem de exemplo.</h3>
+<img src="ufw2.png" width="660" height="360">
+<h3>Na imagem de exemplo eu acabei de bloquear a porta 80.</h3>
+<p></p>
+<h3>sudo ufw delete allow (porta):</h3>
+<h3>Com este comando você remove uma regra, abaixo estará um exemplo:</h3>
+<img src="ufw3.png" width="660" height="360">
+<h3>Na imagem por exemplo, eu acabei de deletar a regra da porta 80.</h3>
+<p></p>
+<h3>Alguns comandos bem úteis também:</h3>
+<h3>sudo ufw status numbered: Com este comando você consegue ver algumas regras existentes no seu firewall.</h3>
+<h3>sudo ufw limit ssh: Limita tentativas de conexão (Perfeita para se proteger de ataques de DDoS).</h3>
+<h3>sudo ufw status verbose: Ele é tipo o "sudo ufw status" só que ele te dá uma visão mais avançada sobre seu firewall.</h3>
+<p></p>
+
+</body>
+</html>

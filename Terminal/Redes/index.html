@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal redes</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+    </style>
+</head>
+<body>
+
+<h1>Redes:</h1>
+<p></p>
+<h2>Olá caro visitante! Aqui e irei te ensinar alguns comandos para se conectar na internet wifi via terminal, então...
+    Anote se quiser, mas preste bem atenção aos detalhes, é bem fácil.
+</h2>
+<p></p>
+<h2>nmcli dev wifi:</h2>
+<img src="nmcli.png" width="660" height="460">
+<h3>Bem, como podem perceber, usei o comando nmcli dev wifi para listar as redes wifi que vai mostrar coisas como
+    nome de rede, BSSID, mode, chan, Rate e signal, mas também pode mostrar a segurança (Sendo WPA1 ou WPA2 ou outras) e algumas barrinhas
+mostrando o quanto a rede wifi é forte.</h3>
+<p></p>
+<h2>nmcli dev wifi connect "nome-da-rede" password "senha":</h2>
+<h3>"Certo, e agora?" você pergunta depois de listar a rede wifi e relaxa! É bem simples!, o comando
+    nmcli dev wifi "nome-da-rede" password "senha" vai servir para você se conectar a rede wifi, que está na lista claro
+e bem sim você vai ter que saber a senha do wifi, então... Melhor pedir pro seu vizinho antes de tentar hackear a rede wifi dele.</h3>
+<p></p>
+<h2>Explicação das coisas que aparecem no comando nmcli dev wifi:</h2>
+<h3>In-use: Significa qual rede você está usando, então exemplo: Eu estou conectado no REPETIDOR, logo o meu in-use mostra uma estrela na linha do REPETIDOR.</h3>
+<h3>BSSID: É o endereço MAC da rede wifi o que significa que é um identificador único.</h3>
+<h3>SSID: Nome de rede</h3>
+<h3>Mode: Tipo de rede.</h3>
+<h3>Chan: É o canal utilizado.</h3>
+<h3>Signal: Intensidade do sinal.</h3>
+<h3>Bars: É a representação gráfica da intensidade do sinal.</h3>
+<h3>Security: É o tipo de segurança (Sendo WPA1, WPA2 e etc.)</h3>
+<p></p>
+<h2>ifconfig: </h2>
+<h3>O comando ifconfig serve para mostrar as configurações de rede, inclusive é com esse comando que mostra seu IP.</h3>
+<h4>Aviso: Esse eu não irei mostrar imagem porque pode conter informações sensíveis como o IP.</h4>
+<p></p>
+<h2>iwconfig: </h2>
+<h3>Com esse comando você pode configurar e visualizar parâmetros de interfaces de rede wifi.</h3>
+<p></p>
+
+</body>
+</html>

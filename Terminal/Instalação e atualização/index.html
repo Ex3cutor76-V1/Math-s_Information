@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal instalação e atualização</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+    </style>
+</head>
+<body>
+    <h1>Como instalar, desinstalar e atualizar coisas no termianl:</h1>
+    <p></p>
+<h2>Eis a primeira preocupação de alguém que começa no Linux pela primeira vez "Como diabos eu instalo as coisas aqui?"
+    E relaxa colega que aqui você aprende rápido.
+</h2>
+<h2>E bem eu vou ensinar no modo de distribuições derivadas de Debian/Ubuntu, as derivadas do Arch infelizmente não sei
+    mas relaxa algum dia pode ter uma atualização aqui no site ensinando algumas coisas do Arch que inclusive é a distro Linux 
+    para usuários avançados que bem ela só não fica em primeiro lugar dos difíceis por causa do Gentoo que é um inferno.
+</h2>
+<p></p>
+<h3>Instalar:</h3>
+<h3>sudo apt install nome-do-programa = Instalar coisas via apt.</h3>
+<h3>flatpak install nome-do-repositório-flatpak = Instalar coisas via flatpak.</h3>
+<h3>sudo snap install nome-do-programa = Instalar coisas via Snap.</h3>
+<h3>sudo apt-get install nome-do-programa = Instalar coisas via apt-get.</h3>
+<p></p>
+<h3>Desinstalar:</h3>
+<h3>sudo apt remove nome-do-programa = Desinstalar coisas via apt (Use o comando: apt list para ver os programas.)</h3>
+<h3>sudo apt purge nome-do-programa = Desinstalar completamente (A diferença desse comando para o anterior é que esse desinstala 
+  completamente tudo, inclusive os restos dos arquivos.)</h3> 
+  <h3>flatpak uninstall nome-do-programa = Desinstala coisas via Flatpak (Se quiser saber qual o nome do programa use o comando: flatpak list)</h3>
+<h3>sudo snap remove nome-do-programa = Desinstala coisas via Snap (Se quiser saber qual o nome do programa use o comando: snap list)</h3>
+<h3>sudo apt-get remove nome-do-programa = Desinstala programas via apt-get.</h3>
+<p></p>
+<h3>Atualizar:</h3>
+<h3>sudo apt update = Ele lista os arquivos e programas que precisam de atualização.</h3>
+<h3>sudo apt upgrade = Ele atualiza os arquivos e programas que precisam de atualização.</h3>
+<h3>Mas se caso você quer ver a lista e atualizar ao mesmo tempo use: sudo apt update && apt upgrade</h3>
+<h3>Flatpak update = Procura atualizações e atualiza programas instalados via flatpak.</h3>
+<h3>sudo apt-get update = Faz uma lista de arquivos e programas que precisam ser atualizados.</h3>
+<h3>sudo apt-get upgrade = Atualiza os programas que precisam de atualização.</h3>
+<p></p>
+<h2>Como baixar arquivos com extensão .deb:</h2>
+<h3>sudo dpkg -i "arquivo.deb":</h3>
+<img src="dpkg1.png" width="960" height="660">
+<h3>Aqui por exemplo no terminal eu estou instalando um arquivo .deb do chrome onde eu usei o comando: sudo dpkg -i google-chrome-stable_current_amd64.deb (que é um
+  arquivo .deb que instalei no site da google.)
+</h3>
+<p></p>
+<h3>Imagem final de que realmente funcionou:</h3>
+<img src="dpkg2.png" width="960" height="660">
+<p></p>
+<h3>sudo apt-get purge "nome-do-programa":</h3>
+<h3>E certo mas, lembro-me que odeio usar google, então, como farei pra desinstalar? Simples:</h3>
+<img src="dpkg3.png" width="960" height="660">
+<h3>No caso por aqui utilizei o comando: sudo apt-get purge google-chrome-stable</h3>
+<h3>Que no caso com esse comando vai desinstalar completamente o chrome e alguns de seus arquivos que ficam no computador
+  (Que inclusive consome muita memória e seu computador fica lento).
+</h3>
+
+</body>
+</html>

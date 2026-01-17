@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal- Importante</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; 
+      }
+
+      
+      a {
+        color: #00FF00; 
+        text-decoration: none; 
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+    <h1>Comandos importantes para o terminal:</h1>
+<h2>Olá caro visitante, bem, desde que mudei pro Debian, para aumentar conhecimento e 
+    compartilhar isso a você, tive alguns conflitos, mas com o tempo eu aprendi e percebi que realmente
+    se você quer uma distro linux difícil de se usar, ela não vai te ajudar igual o Mint, então aqui vai
+    comandos do terminal bem importantes e que alguns você configura.
+</h2>
+<h4>Aviso: Os comandos que estão aqui não servem no Arch Linux ou Fedora ou distros baseadas no Arch ou no Fedora, e sim apenas em 
+    Ubuntu/Debian ou distros baseadas no Ubuntu ou Debian.
+</h4>
+<p></p>
+<h3>flatpak:</h3>
+<h3>O flatpak não vem junto com algumas distros linux, então ele deve ser instalado, e bem o que é o flatpak?
+    O flatpak é um pacote de instalação de aplicativos, e sim ele é fácil de usar, tanto que eu sempre usei ele
+    para facilitar nas instalações de aplicativos e agora aqui vai alguns comandos pra você saber:
+</h3>
+<h3>Instalar: sudo apt install flatpak</h3>
+<h3>Uma coisa que aprendi é que após instalar o flatpak, ele não vai funcionar vinculado a um repositório flathub,
+    então use esse comando para resolver o problema:
+</h3>
+<h3>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</h3>
+<h2>Comandos que você vai usar no flatpak normalmente:</h2>
+<h3>flatpak install nome.do.aplicativo</h3>
+<h3>flatpak uninstall nome.do.aplicativo</h3>
+<h3>flatpak update</h3>
+<p></p>
+<h3>wget:</h3>
+<h3>Pois é eu também fiquei impressionado quando soube que não vem junto a distro linux, mas é simples e funciona normalmente
+    só usar esse comando:
+</h3>
+<h3>sudo apt install wget</h3>
+<p></p>
+<h3>git:</h3>
+<h3>Instalação: sudo apt install git</h3>
+<h3>Eu sei que o git vem junto ao sistema operacional, mas muitas vezes acaba dando erro na instalação e não instala o git
+  e bem é preciso instalar e o motivo é bem importante até, o git serve para você conectar seu sute no github pages ou até clonar um
+  repositório github (Sim isso é para você desenvolvedor, mas use se quiser).
+</h3>
+<h3>Login no git via terminal:</h3>
+<h3>Login com email: git config --global user.email "seu@email.com"</h3>
+<h3>Login com username: git config --global user.name "Seu Nome"</h3>
+<p></p>
+<h3>uv:</h3>
+<h3>Bem o uv também é um pacote de instalação e que muitas ferramentas hackers usam como o theHarvester e aqui vai a instalação:</h3>
+<h3>instalar: curl -LsSf https://astral.sh/uv/install.sh | sh</h3>
+<h3>Reinicie o terminal: source ~/.bashrc</h3>
+<h3>Agora para testar use: uv --version</h3>
+<h3>Use isso se tiver erros: sudo apt install -y curl ca-certificates</h3>
+<p></p>
+<h3>go:</h3>
+<h3>Instalação: sudo apt install golang-go</h3>
+<h3>O golang-go pode ser muito utilizado em ferramentas hacking então se caso tu não tenha, recomendo instalar, já que ferramentas como 
+  WPProbe usam esse comando.
+</h3>
+<p></p>
+<h3>ruby:</h3>
+<h3>Instalação: sudo apt install ruby-full</h3>
+<h3>O ruby também é muito usado em ferramentas hacking, um exemplo disso é o XSpear que utiliza gem que é uma parte do ruby.</h3>
+<p></p>
+<h3>fasfetch ou neofetch:</h3>
+<h3>Dois programas ótimos que mostram informações sobre seu pc para você, dizendo seu hardware e até sistema operacional e memória, bem, 
+  o neofetch foi descontinuado e então surgiu o fastfetch que dava informações a mais, então aqui vai:
+</h3>
+<h3>Instalação:</h3>
+<h3>Fastfetch: sudo apt install fastfetch</h3>
+<h3>Neofetch: sudo apt install neofetch</h3>
+<h3>Bem para usar os comandos é só os comandos neofetch (Se você instalou o neofetch) ou o fastfetch (Se você instalou o fastfetch)</h3>
+<h2>Como colocar eles para aparecerem toda vez que você abrir o termina?</h2>
+<h3>Primeiro você vai editar o arquivo do terminal: nano ~/.bashrc</h3>
+<h3>Depois você vai na última linha de código que vai estar vazia e só colocar na última linha de código os comandos desses programas 
+  (No caso fastfetch ou neofetch)
+</h3>
+<h3>Salvar e resetar o terminal: source ~/.bashrc</h3>
+
+</body>
+</html>

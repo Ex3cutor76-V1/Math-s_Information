@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal-tar</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+
+      /* Estilo para os links para ficarem destacados */
+      a {
+        color: #00FF00; /* Verde neon, típico de código */
+        text-decoration: none; /* Retira o sublinhado */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Sublinha o link quando passar o mouse */
+      }
+    </style>
+</head>
+<body>
+<h2>tar.gz:</h2>
+<h3>Bem relaxa que esse também é um pouco complicada até mas agora vou te ensinar utilizando a mesma pasta, o Teste1 e bem as ferramentas
+    que vamos precisar é do tar e gzip que no caso o tar empacota o arquivo ou pasta e o gzip faz a compressão do .gz
+</h3>
+<h3>Para instalar ambas as ferramentas use: sudo apt install tar gzip</h3>
+<img src="targz.png" width="660" height="360">
+<h3>Bem como pode ver usei o comando: tar -czvf arquivo.tar.gz pasta/</h3>
+<h3>E bem assim foi para compactar, mas o que significa essas 4 letras? Aqui explicação:</h3>
+<h3>c = Criar</h3>
+<h3>z = Usar gzip</h3>
+<h3>v = Modo verbose (No caso irá mostrar arquivos)</h3>
+<h3>f = Nome do arquivo final</h3>
+<h3>E certo compactamos, vamos descompactar?</h3>
+<h2>Na descompactação:</h2>
+<img src="targz2.png" width="660" height="360">
+<h3>E bem é assim que descompacta e sim eu usei rm -dir -f para apagar aquela pasta para funcionar o comando
+    e bem o comando foi básicamente assim: tar -xzvf Arquivo.tar.gz
+</h3>
+<h3>E bem sim o tar é uma ferramenta muito poderosa, você vai ver ela na maioria das vezes agora aqui vai explicação dessas letras:</h3>
+<h3>x = Extrair</h3>
+<h3>z = gzip</h3>
+<h3>v = Verbose</h3>
+<h3>f = Arquivo</h3>
+<p></p>
+<h2>tar.bz2</h2>
+<h3>O tar.bz2 é a mesma coisa do tar.gz, mas com algumas diferenças e aqui vou te mostrar, só precisamos da ferramenta: bzip2 que fará
+    a compreesão (Para instalar use: sudo apt install bzip2) que também será feita com a pasta Teste1 (Nossa cobaia)
+</h3>
+<img src="bz2.png" width="660" height="360">
+<h3>Bem como podem ver usei o comando: tar -cjvf arquivo.tar.bz2 arquivo/ para compactar a pasta e aqui vai uma breve explicação sobre 
+    essas letras:
+</h3>
+<h3>c = Criar</h3>
+<h3>j = Usar bzip2</h3>
+<h3>v =  Verbose</h3>
+<h3>f = Arquivo</h3>
+<h3>Agora que sabemos, vamos descompactar.</h3>
+<h2>Na descompactação:</h2>
+<img src="tarbz22.png" width="660" height="360">
+<h3>Como podem ver eu utilizei o comando: tar -xjvf arquivo.tar.bz2 para descompactar a pasta com tar.bz2</h3>
+<h3>Explicação das letras no comando:</h3>
+<h3>x = Extrair</h3>
+<h3>j = Usar bzip2</h3>
+<h3>v = Verbose</h3>
+<h3>f = Arquivo</h3>
+<p></p>
+<h2>tar.xz:</h2>
+<h3>Ele é a mesma coisa dos outros, só a ferramenta que muda e então vamos precisar de uma ferramenta chamada xz-utils
+    que irá servir para a compressão que para instalar só usar o comando: sudo apt install xz-utils
+</h3>
+<img src="tarxz.png" width="660" height="360">
+<h3>Como podem ver eu usei o comando: tar -cJvf arquivo.tar.xz arquivo/</h3>
+<h3>Que bem vocês estão cansados de ver isso mas beleza:</h3>
+<h3>c = Criar</h3>
+<h3>J (Sim "J" maiúsculo) = Usar xz</h3>
+<h3>v = Verbose</h3>
+<h3>f = Arquivo</h3>
+<h2>Para descompactar:</h2>
+<img src="tarxz2.png" width="660" height="360">
+<h3>E bem aqui eu usei o comando: tar -xJvf arquivo.tar.xz para descompactar a pasta e bem eu nem preciso explicar de novo
+    o que é essas letras certo? Porque literalmente é quase tudo a mesma coisa.
+</h3>
+<p></p>
+
+</body>
+</html>

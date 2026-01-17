@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal formatação pen drive</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1, h2, h3 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+    </style>
+</head>
+<body>
+    <h1>Como formatar um pen drive no terminal:</h1>
+<p></p>
+<h2>Aqui é bem fácil até e vou te ensinar isso porque é bem mais seguro do que instalar um programa no Linux
+    que pode acabar queimando seu pen drive ou bichando ele.
+</h2>
+<p></p>
+<h2>Comando importante:</h2>
+<h2>lsblk -l:</h2>
+<h3>Com esse comando ele irá listar discos e partições do seu computador.</h3>
+<h4>Se quiser ver mais detalhadamente use: lsblk -f</h4>
+<p></p>
+<h2>Como formatar um pen drive pelo terminal?:</h2>
+<h3>Uma coisa bem importante, então recomendo que preste bem atenção:</h3>
+<h3>Primeiro de tudo coloque o seu pen drive na USB.</h3>
+<img src="formatar1.png" width="660" height="360"><h3>Como podem ver neste pen drive para testes coloquei 3 pastas completamente vazias, para o teste
+  e agora vamos formatar este pen drive.
+</h3>
+<p></p>
+<h3>Agora no terminal para listar os drivers digite: lsblk</h3>
+<img src="formatar2.png" width="660" height="360"><h3>Agora que listamos os drivers, como vamos saber qual é o pen driver? Simples, no meu caso por exemplo
+  é o sdb, mas as vezes vem números nesse "sdb", então coloque com forme for no seu (Se caso ter número no sdb coloque como exemplo: sdb1).
+</h3>
+<p></p>
+<h3>Agora o próximo passo vai ser desmontar com o comando: sudo umount /dev/sdb</h3>
+<img src="formatar3.png" width="660" height="360"><h3>Bem agora que desmontamos o pen driver é hora de formatar.</h3>
+<p></p>
+<h3>Agora nesse passo final existem diversos (Sem ser o GPT) tipos de formatação sendo eles:</h3>
+<h3>FAT32: Melhor para dispositivos pequenos e para compartilhamento entre diferentes sistemas operacionais.</h3>
+<h3>NTFS: Ideal para sistemas Windows, oferecendo segurança e recursos avançados, entretanto não é compátivel com Linux e MacOS</h3>
+<h3>EXT4: Melhor para sistemas Linux, com alta performance e recursos avançados, mas dificil de usar em outros sistemas operacionais.</h3>
+<h3>E bem agora que você conhece essas diferenças, vamos formatar para FAT32 usando: sudo mkfs.vfat -F 32 /dev/sdb</h3>
+<img src="formatar4.png" width="1060" height="360"><h3>E pronto formatamos nosso pen driver para FAT32.</h3>
+<p></p>
+<h3>Resulto:</h3>
+<img src="formatar5.png" width="660" height="360">
+<p></p>
+<h3>Alguns outros comandos da formatação:</h3>
+<h3>FAT32: sudo mkfs.vfat -F 32 /dev/sdb</h3>
+<h3>NTFS: sudo mkfs.ntfs -f /dev/sdb</h3>
+<h3>EXT4: sudo mkfs.ext4 /dev/sdb</h3>
+<p></p>
+
+</body>
+</html>
