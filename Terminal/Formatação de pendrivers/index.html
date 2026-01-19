@@ -59,6 +59,52 @@
 <h3>NTFS: sudo mkfs.ntfs -f /dev/sdb</h3>
 <h3>EXT4: sudo mkfs.ext4 /dev/sdb</h3>
 <p></p>
+<h1>Atualização 19/01/2026:</h1>
+<p></p>
+<h3>Bem você provavelmente foi formatar deste jeito que ensinei só que veio de forma errada certo?
+  Ou provavelmente deu erro no seu e bem nessa época que ensinei isso, eu estava no Linux Mint, mas 
+  como estou no Debian as coisas funcionaram um pouco diferente do que imaginei, por isso mesmo que 
+  aqui agora vou ensinar a você outro método que também é seguro de formatar um pen drive.
+</h3>
+<h2>Como formatar um pen drive com o fdisk</h2>
+<h3>Bem na maioria das distros já vem com o fdisk mas se caso a sua não vier use: sudo apt install fdisk</h3>
+<p></p>
+<img src="fdisk.png" width="960" height="660">
+<h3>Agora use o comando: sudo fdisk /dev/sdb</h3>
+<h3>Com este comando você entra no fdisk para resolver o problema.</h3>
+<p></p>
+<img src="fdisk2.png" width="960" height="660">
+<h3>Agora coloque a letra "o" e dá enter para criar uma nova tabela.</h3>
+<h3>E bem eu sei que você está desconfortável com essas letras em vermelho mas relaxa isso é normal eu meio que
+  tive alguns erros com esse pen drive, mas estou aprendendo com meus erros e resolvendo eles e claro ensinando a
+  você agora.
+</h3>
+<p></p>
+<img src="fdisk3.png" width="960" height="660">
+<h3>Agora preste bem atenção nessa sequência:</h3>
+<h3>n</h3>
+<h3>p</h3>
+<h3>1</h3>
+<h3>2048</h3>
+<h3>Clique em enter 2 vezes</h3>
+<h3>Com isso vai criar uma nova partição.</h3>
+<p></p>
+<img src="fdisk4.png" width="960" height="660">
+<h3>Agora o seguinte utilize "t" e dê enter.</h3>
+<h3>Após isso use "c" para selecionar Fat32 (Existem outros como NTFS e Ext4 mas por agora vou ensinar o fat32 que é
+  mais usado.)
+</h3>
+<p></p>
+<img src="fdisk5.png" width="960" height="660">
+<h3>Agora use "w" e enter para salvar.</h3>
+<p></p>
+<h3>Bem você provavelmente deu "lsblk" para verificar e não apareceu nada certo? Bem agora é só repetirmos o que fizemos antes.
+</h3>
+<h3>No caso usamos o comando: sudo mkfs.vfat -F 32 /dev/sdb1 (No meu caso é /dev/sdb1 se o seu for diferente use também)</h3>
+<p></p>
+<h3>E bem assim resolvemos o problema de formatação de pen drive.</h3>
+<p></p>
+
 
 </body>
 </html>
