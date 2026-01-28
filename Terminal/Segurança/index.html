@@ -78,6 +78,37 @@
 <h3>sudo ufw limit ssh: Limita tentativas de conexão (Perfeita para se proteger de ataques de DDoS).</h3>
 <h3>sudo ufw status verbose: Ele é tipo o "sudo ufw status" só que ele te dá uma visão mais avançada sobre seu firewall.</h3>
 <p></p>
+<h2>Atualização do dia 28/01/2026:</h2>
+<p></p>
+<h3>Olá caro visitante, você provavelmente lembra dos comandos do firewall certo? Mas também deve ter se perguntado
+  qual porta bloquear, já que algumas delas são sim inseguras e bem por mais que não é só porta TCP/IP que realmente 
+  pode te colocar em risco mas sim qual programa está escutando deixa eu aliviar um pouco sua parte por porta TCP/IP 
+  porque elas são bem antigas e inseguras.
+</h3>
+<h3>Portas TCP/IP inseguras: 21, 23, 69, 137, 139, 445, 512, 514, 111.</h3>
+<h2>Explicação de cada porta:</h2>
+<p></p>
+<h3>21: FTP (Envio e download de arquivos mas não é criptografado.)</h3>
+<h3>23: Telnet (Acesso remoto a terminal, mas tudo é texto puro e foi substituido pelo SSH que é a porta 22.)</h3>
+<h3>69: TFTP (Transferência simples de arquivos e isso sem login, no caso sem autênticação e sem criptografia.)</h3>
+<h3>111: RPCbind (Descobre serviços RPC em sistemas Unix/Linux e sim ele é um alvo comum a ataques se exposto à internet, mas normalmente
+  é usado em redes internas.)
+</h3>
+<h3>137: NetBIOS Name Service (Resolução de nomes em redes windows antigas que bem pode vazar nomes de máquinas e usuários.)</h3>
+<h3>139: NetBIOS Session Service (Compartilhamento de arquivos e impressoras no windows antigo e sim é inseguroe exposto externamente.)</h3>
+<h3>445: SMB (Compartilhamento de arquivos e impressoras no windows mas é uma porta famosa por ataques, um exemplo disso é o ataque WannaCry.)</h3>
+<h3>512: rexec (Execução remota de comandos, usado como um serviço Unix antigo e sim é sem criptografia.)</h3>
+<h3>514: rsh /syslog (rsh é o shell remoto, já o syslog é um log do sistema UDP, mas o rsh é inseguro, syslog é até seguro mas, como possui rsh não parece 
+  ser uma boa ideia deixar aberto, mas isso é por sua conta e risco.)
+</h3>
+<p></p>
+<h3>Bem certo até te apresentei algumas portas que realmente devem ser fechadas, mas lembra quando eu disse que o problema não é só a porta TCP/IP como também é 
+  quem está escutando? No caso o seu programa que está escutando, ele é o real problema e bem esse aqui é o comando para 
+  verificar isso: <h2>ss -tulpet</h2>
+</h3>
+<h3>Esse comando muitas vezes é usado para verificar quem está usando qual porta e sim pode ser meio bagunçado, mas se ler com atenção talvez isso te ajude.</h3>
+<p></p>
+
 
 </body>
 </html>

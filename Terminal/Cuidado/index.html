@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Terminal</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fonte para os h2 e h3 usando Courier Prime */
+      h1 {
+        font-family: 'Courier Prime', monospace; /* Aplicando a fonte Courier Prime */
+      }
+
+      /* Estilo para os links para ficarem destacados */
+      a {
+        color: #00FF00; /* Verde neon, típico de código */
+        text-decoration: none; /* Retira o sublinhado */
+      }
+
+      a:hover {
+        text-decoration: underline; /* Sublinha o link quando passar o mouse */
+      }
+    </style>
+</head>
+<body>
+<h1>Nunca usar esses comamndos:</h1>
+<p></p>
+<h3>Pois é, aqui já não é a toa e eu já te aviso logo, não usa isso sério, tipo se você usar esses comandos 
+    que irei mostrar, você vai destruir seu sistema inteiro ou até travar e sim isso daqui é um aviso até
+    até porque literalmente algum dia você vai encontrar um engraçadinho, se você um dia já caiu na ideia de 
+    "Apaga a pasta system32 que seu computador fica rápido" saiba que aqui no Linux também existe essa piada
+    só que um pouco mais diferente.
+</h3>
+<p></p>
+<h2>sudo dd if=/dev/zero of=/dev/sda</h2>
+<h3>Esse comando ele sobreescreve todo o disco do /dev/sda (que no caso seria seu HD ou SSD), apagando todos os 
+    dados permanentes, incluindo sistemas e partições.
+</h3>
+<p></p>
+<h2>mkfs.ext4 /dev/sda</h2>
+<h3>Eu sei que você já viu esse comando em algum lugar né, antes eu te mostrei como formatar um pen drive usando esse comando 
+    mas aqui você tá literalmente apagando todos os dados existentes no disco, além de criar uma nova estrutura de sistemas de 
+    arquivos ext4, uma coisa é você usar /dev/sdb mas agora /dev/sda, sinto muito se você fez isso e tomara que seu pc fique bem.
+</h3>
+<h2>shred -vfz arquivo</h2>
+<h3>Menos perigoso que os outros, mas evite ok? Isso ainda sim é destrutível, afinal ele apaga o arquivo de forma segura 
+    dificultando ou tornando impossível a recuperação de dados.</h3>
+    <p></p>
+<h2>:(){ :|:& };:</h2>
+<h3>Você provavelmente vai pensar "Ué isso é aleatório" mas não... Acredite se quiser, não é afinal esse comando chama a si mesmo 
+    cada chamada cria mais processos e sim os processos se multiplicam exponencialmente e o sistema fica sem recursos em segundos 
+    então sim sua CPU vai para 100% e a memória se gasta rápido e sim o sistema congela completamente e bem a única saída só reiniciando.
+</h3>
+
+</body>
+</html>
