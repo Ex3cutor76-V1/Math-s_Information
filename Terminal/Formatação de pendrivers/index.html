@@ -18,93 +18,59 @@
     </style>
 </head>
 <body>
-    <h1>Como formatar um pen drive no terminal:</h1>
+<h1>Como formatar um pen driver no Terminal</h1>
 <p></p>
-<h2>Aqui é bem fácil até e vou te ensinar isso porque é bem mais seguro do que instalar um programa no Linux
-    que pode acabar queimando seu pen drive ou bichando ele.
-</h2>
+<h2>Sabe existem 2 formas de formatar um pen drive e bem você que escolhe e essas formas são:</h2>
+<h3>Instalar o gparted (Opção gráfica e mais recomendável se você não quiser passar sufoco)</h3>
+<h3>A parte via texto mesmo (No caso comandos)</h3>
 <p></p>
-<h2>Comando importante:</h2>
-<h2>lsblk -l:</h2>
-<h3>Com esse comando ele irá listar discos e partições do seu computador.</h3>
-<h4>Se quiser ver mais detalhadamente use: lsblk -f</h4>
+<h2>Para instalar o gparted use: sudo apt install gparted</h2>
 <p></p>
-<h2>Como formatar um pen drive pelo terminal?:</h2>
-<h3>Uma coisa bem importante, então recomendo que preste bem atenção:</h3>
-<h3>Primeiro de tudo coloque o seu pen drive na USB.</h3>
-<img src="formatar1.png" width="660" height="360"><h3>Como podem ver neste pen drive para testes coloquei 3 pastas completamente vazias, para o teste
-  e agora vamos formatar este pen drive.
+<h2>Tutorial para formatar um pen driver:</h2>
+<p></p>
+<h3>Comando usado: lsblk</h3>
+<img src="lsblk.png" width="660" height="360">
+<h3>O primeiro passo é saber onde está o pen drive e aqui no meu caso é o sdb, e bem pode depender qual for o seu
+  algumas vezes ele até pode aparecer como sdb1 ou sdb2 ou até igual o meu que foi sdb e bem agora que sabemos um
+  pequeno aviso: Não tente formatar o sda, afinal ele é seu HD ou SSD que fique avisado.
 </h3>
 <p></p>
-<h3>Agora no terminal para listar os drivers digite: lsblk</h3>
-<img src="formatar2.png" width="660" height="360"><h3>Agora que listamos os drivers, como vamos saber qual é o pen driver? Simples, no meu caso por exemplo
-  é o sdb, mas as vezes vem números nesse "sdb", então coloque com forme for no seu (Se caso ter número no sdb coloque como exemplo: sdb1).
-</h3>
+<h3>Comando usado: sudo wipefs -a /dev/sdb</h3>
+<img src="wipefs.png" width="1060" height="360">
+<h3>Bem agora precisamos apagar as assinaturas antigas de sistemas operacionais ou até lixo eletrônico e etc.</h3>
 <p></p>
-<h3>Agora o próximo passo vai ser desmontar com o comando: sudo umount /dev/sdb</h3>
-<img src="formatar3.png" width="660" height="360"><h3>Bem agora que desmontamos o pen driver é hora de formatar.</h3>
+<h3>Comando usado: sudo fdisk /dev/sdb</h3>
+<img src="fdisk.png" width="660" height="360">
+<h3>Bem agora por aqui temos que entrar no fdisk para poder resolver o problema.</h3>
 <p></p>
-<h3>Agora nesse passo final existem diversos (Sem ser o GPT) tipos de formatação sendo eles:</h3>
-<h3>FAT32: Melhor para dispositivos pequenos e para compartilhamento entre diferentes sistemas operacionais.</h3>
-<h3>NTFS: Ideal para sistemas Windows, oferecendo segurança e recursos avançados, entretanto não é compátivel com Linux e MacOS</h3>
-<h3>EXT4: Melhor para sistemas Linux, com alta performance e recursos avançados, mas dificil de usar em outros sistemas operacionais.</h3>
-<h3>E bem agora que você conhece essas diferenças, vamos formatar para FAT32 usando: sudo mkfs.vfat -F 32 /dev/sdb</h3>
-<img src="formatar4.png" width="1060" height="360"><h3>E pronto formatamos nosso pen driver para FAT32.</h3>
-<p></p>
-<h3>Resulto:</h3>
-<img src="formatar5.png" width="660" height="360">
-<p></p>
-<h3>Alguns outros comandos da formatação:</h3>
-<h3>FAT32: sudo mkfs.vfat -F 32 /dev/sdb</h3>
-<h3>NTFS: sudo mkfs.ntfs -f /dev/sdb</h3>
-<h3>EXT4: sudo mkfs.ext4 /dev/sdb</h3>
-<p></p>
-<h1>Atualização 19/01/2026:</h1>
-<p></p>
-<h3>Bem você provavelmente foi formatar deste jeito que ensinei só que veio de forma errada certo?
-  Ou provavelmente deu erro no seu e bem nessa época que ensinei isso, eu estava no Linux Mint, mas 
-  como estou no Debian as coisas funcionaram um pouco diferente do que imaginei, por isso mesmo que 
-  aqui agora vou ensinar a você outro método que também é seguro de formatar um pen drive.
-</h3>
-<h2>Como formatar um pen drive com o fdisk</h2>
-<h3>Bem na maioria das distros já vem com o fdisk mas se caso a sua não vier use: sudo apt install fdisk</h3>
-<p></p>
-<img src="fdisk.png" width="960" height="660">
-<h3>Agora use o comando: sudo fdisk /dev/sdb</h3>
-<h3>Com este comando você entra no fdisk para resolver o problema.</h3>
-<p></p>
-<img src="fdisk2.png" width="960" height="660">
-<h3>Agora coloque a letra "o" e dá enter para criar uma nova tabela.</h3>
-<h3>E bem eu sei que você está desconfortável com essas letras em vermelho mas relaxa isso é normal eu meio que
-  tive alguns erros com esse pen drive, mas estou aprendendo com meus erros e resolvendo eles e claro ensinando a
-  você agora.
-</h3>
-<p></p>
-<img src="fdisk3.png" width="960" height="660">
-<h3>Agora preste bem atenção nessa sequência:</h3>
+<h3>Preste bem atenção na ordem!!</h3>
+<h3>o</h3>
 <h3>n</h3>
 <h3>p</h3>
-<h3>1</h3>
-<h3>2048</h3>
-<h3>Clique em enter 2 vezes</h3>
-<h3>Com isso vai criar uma nova partição.</h3>
+<h3>clique em enter 2 vezes</h3>
+<h3>t</h3>
+<h3>c</h3>
+<h3>w</h3>
+<h3>E se caso não entendeu nada aqui vai explicação:</h3>
+<h3>o = Criar nova tabela MBR</h3>
+<h3>n = nova partição</h3>
+<h3>p = primária</h3>
+<h3>1 = número de partição</h3>
+<h3>Os dois enter é basicamente pra ser o padrão.</h3>
+<h3>t =  mudar tipo</h3>
+<h3>c = FAT32 (No caso o padrão)</h3>
+<h3>w = gravar e sair</h3>
+<h3>E bem é assim que vai aparecer pra você:</h3>
+<img src="fdisk2.png" width="360" height="360">
 <p></p>
-<img src="fdisk4.png" width="960" height="660">
-<h3>Agora o seguinte utilize "t" e dê enter.</h3>
-<h3>Após isso use "c" para selecionar Fat32 (Existem outros como NTFS e Ext4 mas por agora vou ensinar o fat32 que é
-  mais usado.)
+<h3>Comando usado: sudo mkfs.vfat -F32 /dev/sdb1</h3>
+<img src="mkfs.png" width="660" height="360">
+<h3>E prontinho formatado com sucesso e aparecend no thunar e sim eu tive que colocar sdb1 porque o 
+  mkfs meio que rejeitava algumas coisas, mas no final tudo deu certo
 </h3>
 <p></p>
-<img src="fdisk5.png" width="960" height="660">
-<h3>Agora use "w" e enter para salvar.</h3>
+<h2>Mas olha se caso não quiser quebrar a cabeça por causa desses comandos, só instalar o gparted.</h2>
 <p></p>
-<h3>Bem você provavelmente deu "lsblk" para verificar e não apareceu nada certo? Bem agora é só repetirmos o que fizemos antes.
-</h3>
-<h3>No caso usamos o comando: sudo mkfs.vfat -F 32 /dev/sdb1 (No meu caso é /dev/sdb1 se o seu for diferente use também)</h3>
-<p></p>
-<h3>E bem assim resolvemos o problema de formatação de pen drive.</h3>
-<p></p>
-
 
 </body>
 </html>
