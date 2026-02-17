@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Linux archives</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; 
+      }
+
+      
+      a {
+        color: #00FF00; 
+        text-decoration: none; 
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      nav {
+  border: 1px solid #00FF00;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+li {
+  border-bottom: 1px dashed #00FF00;
+  padding: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+<h1>Arquivos do Linux explicados:</h1>
+<p></p>
+<img src="archives_linux.jpeg" width="960" height="460">
+<p></p>
+<h3>Bem você provavelmente já viu esses arquivos certo? Desde que você saiu do Windows e veio para o Linux
+    você olhou para isso e pensou "O que diabos é isso?" e bem, hoje eu te explico cada um deles.
+</h3>
+<p></p>
+<h2>bin:</h2>
+<h3>O bin é basicamente o arquivo que contém os comandos essenciais para o user, no caso é nele que existe comandos 
+    como: ls, cp, clear, etc.
+</h3>
+<p></p>
+<h2>boot:</h2>
+<h3>Nesse aqui já são os arquvios necessários para iniciar o sistema, principalmente o kernel linux.</h3>
+<p></p>
+<h2>dev:</h2>
+<h3>São os arquivos que representam os dispositivos do sistema como impressoras, pen drivers e até mesmo o HD ou SSD,
+    por isso que quando usamos o comando lsblk mostra algo como /dev/sdb ou até /dev/sda.
+</h3>
+<p></p>
+<h2>etc:</h2>
+<h3>São os arquivos de configuração do sistema e de alguns serviços.</h3>
+<p></p>
+<h2>home:</h2>
+<h3>Basicamente esse é o diretório pessoal do usuário, te dando acesso a área de trabalho</h3>
+<p></p>
+<h2>lib e lib64:</h2>
+<h3>Esses 2 diretórios são duas bibliotécas compartilhadas e usadas pelos programas instalados na sua máquina.</h3>
+<p></p>
+<h2>media:</h2>
+<h3>São os pontos de montagem para dispositivos removíveis como CD ou DVD e até pen drivers.
+</h3>
+<p></p>
+<h2>mnt:</h2>
+<h3>São pontos temporários para manter sistemas de arquivos, no caso por exemplo quando você quer formatar um pen driver ou DVD ou CD 
+    você pode literalmente salvar alguns arquivos deles no mnt temporáriamente.
+</h3>
+<p></p>
+<h2>proc:</h2>
+<h3>São os sistemas de arquivos virtuais que mostram informações do kernel e de processos.</h3>
+<p></p>
+<h2>root:</h2>
+<h3>Basicamente é um diretório pessoal com acesso administrativo (No caso é a pasta do administrador)</h3>
+<p></p>
+<h2>run:</h2>
+<h3>São arquivos temporários usados durante a execução de um programa do sistema.</h3>
+<p></p>
+<h2>sbin:</h2>
+<h3>São os programas essenciais para a administração do sistema (Que inclusive você só entra nesse arquivo como root)</h3>
+<p></p>
+<h2>srv:</h2>
+<h3>São dados específicos dos serviços oferecidos pelo sistema (Por exemplo: Servidores web).</h3>
+<p></p>
+<h2>sys:</h2>
+<h3>São os sistemas de arquivos virtuais para interface kernel.</h3>
+<p></p>
+<h2>tmp:</h2>
+<h3>São arquivos temporários usados por programas.</h3>
+<p></p>
+<h2>usr:</h2>
+<h3>São os programas e dados compartilhados entre usuários (Se caso o seu computador for mais de 1 usuário).</h3>
+<p></p>
+<h2>var:</h2>
+<h3>Arquivos que mudam durante a execução. (Exemplo: Logs, caches e etc.)</h3>
+<p></p>
+<h2>Arquivos que estão na imagem mas são opcionais e não são de fato os principais:</h2>
+<p></p>
+<h2>snap:</h2>
+<h3>O snap por mais que ele é um gerenciador de pacotes, ele quando instalado com o comando sudo apt install snapd, ele cria uma pasta 
+    chamada snap, no caso todo pacote que você instalar via snap, vai pra lá.
+</h3>
+<p></p>
+<h2>initrd.img e initrd.img.old:</h2>
+<h3>Bem esses são imagens usadas para inicializar o sistema antes de montar a raiz então... Se caso sua distro linux tem isso, não apague.</h3>
+<p></p>
+<h2>vmlinuz e vmlinuz.old:</h2>
+<h3>São os arquivos do kernel Linux.</h3>
+<p></p>
+
+</body>
+</html>
