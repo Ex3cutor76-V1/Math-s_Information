@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: Criptografia</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; 
+      }
+
+      
+      a {
+        color: #00FF00; 
+        text-decoration: none; 
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      nav {
+  border: 1px solid #00FF00;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+li {
+  border-bottom: 1px dashed #00FF00;
+  padding: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+<h1>Como criptografar um arquivo:</h1>
+<p></p>
+<h3>Olá caro visitante! Você provavelmente já se perguntou, "como que eu criptografo um arquivo via terminal?" provavelmente 
+    para proteger esse seu arquivo txt que não possui proteção nenhuma mesmo você zipando ele, bem aqui irei te mostrar como.
+</h3>
+<p></p>
+<h2>Ferramentas:</h2>
+<h3>Tudo que vamos precisar é de uma ferramenta, chamada gpg, que sim ela vai ser perfeita para essa situação, afinal ela já foi
+    usada principalmente em um evento que acontecia na internet principalmente no 4chan, o Cicada 3301 e bem aqui está uma forma 
+    de você instalar essa ferramenta: sudo apt install gpg
+</h3>
+<h2>Sobre a ferramenta:</h2>
+<h3>GPG ou também GNU Privacy Guard é uma ferramenta para proteger arquivos, essa ferramenta usa criptografia simétrica e assimétrica
+    e sim essa ferramenta é uma ferramenta open source, muito usado por pessoas que protegem seus arquivos e principalmente foi usada em um 
+    caso da internet chamado Cicada 3301.
+</h3>
+<p></p>
+<h2>Criptografando um arquivo:</h2>
+<img src="gpg.png" width="660" height="360">
+<h3>Como podem perceber  no meu terminal tem um arquivo chamado A.txt que será nossa cobaia e certo podem perceber que dentro do arquivo
+    está escrito "Hello World!" e sim você verá mudanças.
+</h3>
+<img src="gpg2.png" width="660" height="360">
+<h3>Agora olhando bem meu terminal para criptografar use o comando: gpg -c (nome-do-arquivo).txt</h3>
+<h3>Contexto do comando:</h3>
+<h3>gpg --> Chama a ferramenta</h3>
+<h3>-c --> Criptografar</h3>
+<h3>(nome-do-arquivo).txt --> O arquivo que você quer criptografar</h3>
+<h3>Ah e sim quando você fizer isso na sua tela irá aparecer uma mensagem pedindo pra você colocar senha 
+    e que é com essa senha que você irá descriptografar o arquivo e percebe algo na imagem? o arquivo quando foi 
+    criptografado ele não terminou com .txt e sim com .gpg
+</h3>
+<p></p>
+<h2>Descriptografando arquivo:</h2>
+<img src="gpg3.png" width="660" height="360">
+<h3>Como pode perceber na imagem ele pelo menos mostrou a mensagem que tinha no arquivo assim descriptografando o arquivo e bem eu usei o comando:
+    gpg -d (nome-do-arquivo).txt.gpg
+</h3>
+<h3>Contexto do comando:</h3>
+<h3>gpg --> Chama a ferramenta</h3>
+<h3>-d --> Descriptografa</h3>
+<h3>(nome-do-arquivo).txt.gpg --> Arquivo criptografado</h3>
+<p></p>
+
+</body>
+</html>
