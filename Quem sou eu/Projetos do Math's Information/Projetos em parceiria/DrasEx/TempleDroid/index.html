@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math's Information: TempleDroid</title>
+
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      
+      h1, h2, h3, h4 {
+        font-family: 'Courier Prime', monospace; 
+      }
+
+      
+      a {
+        color: #00FF00; 
+        text-decoration: none; 
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      nav {
+  border: 1px solid #00FF00;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+li {
+  border-bottom: 1px dashed #00FF00;
+  padding: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+<h1>TempleDroid:</h1>
+<p></p>
+<h3>Sem dúvidas um dos primeiros projetos do meu amigo e claro onde eu comecei a participar, a ideia do Drastick era 
+    rodar o TempleOS só que no celular e bem como nós amamos o sistema operacional criado por Terry A. Davis nós fizemos 
+    juntos esse projeto que pode ter demorado 2 dias, mas ele funcionou.
+</h3>
+<p></p>
+<h3>Inclusive se caso gostaram do TempleDroid, visite o github dele: <a href="https://github.com/Drastick123">Drastick123</a></h3>
+<p></p>
+<h2>Tutorial de instalação:</h2>
+<h3>Vamos precisar dos requisitos primeiro:</h3>
+<h3>Instalar o Termux</h3>
+<h3>Instalar o wget: pkg install wget</h3>
+<h3>Atualizar: pkg update && pkg upgrade -y</h3>
+<h3>Instalar o root-repo (Caso não tenha): pkg install root-repo</h3>
+<h3>Instalar o netcat: pkg install netcat-openbsd</h3>
+<h3>Instalar o x11: pkg install x11-repo</h3>
+<h3>Instalar o qemu: pkg install qemu-system-x86_64 </h3>
+<p></p>
+<h2>Iniciando instalação:</h2>
+<h3>Agora que temos isso tudo, como faremos para funcionar? No Termux use esse comando:
+    nano $PREFIX/bin/temple
+</h3>
+<h3>Dentro desse arquivo vamos colocar esse script:</h3>
+<iframe src="templedroid.html" width="96%" height="1000px"></iframe>
+<h3>E sim eu sei o script é gigantesco, mas fazer o que né? Depois só salvar com ctrl + O e enter e para sair é 
+    ctrl + X
+</h3>
+
+<p></p>
+<h3>Após isso vamos ter que dá permissão ao arquivo: chmod +x $PREFIX/bin/temple</h3>
+<h3>Depois é só usar o comando: temple</h3>
+
+</body>
+</html>

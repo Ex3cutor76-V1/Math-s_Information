@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.3.2 (Linux)"/>
+	<meta name="created" content="2026-03-25T16:55:20.631870863"/>
+	<meta name="changed" content="2026-03-25T16:55:55.124163851"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm">
+<font color="#81d41a">    #!/data/data/com.termux/files/usr/bin/bash</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== CORES =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">AZUL='\033[1;34m'</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">AMARELO='\033[1;33m'</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">VERDE='\033[1;32m'</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">VERMELHO='\033[1;31m'</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">RESET='\033[0m'</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">RAM_DEFAULT=512</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">ISO=&quot;$HOME/TempleOS.ISO&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">CONFIG_FILE=&quot;$HOME/.temple_config&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== LOADING BAR =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">loading_bar()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -ne &quot;${AZUL}Carregando: ${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ for i in {1..20}; do</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo -ne &quot;${VERDE}#${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ done</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== LOGO =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">logo()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ clear</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e
+&quot;${AMARELO}=========================================${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AZUL}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;████████╗███████╗███╗
+  ███╗██████╗ ██╗     ███████╗&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;╚══██╔══╝██╔════╝████╗
+████║██╔══██╗██║     ██╔════╝&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;   ██║   █████╗  ██╔████╔██║██████╔╝██║
+    █████╗  &quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;   ██║   ██╔══╝  ██║╚██╔╝██║██╔═══╝
+██║     ██╔══╝  &quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;   ██║   ███████╗██║ ╚═╝
+██║██║     ███████╗███████╗&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.03</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;   ╚═╝   ╚══════╝╚═╝    
+╚═╝╚═╝     ╚══════╝╚══════╝&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;            ██████╗ ███████╗&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;           ██╔═══██╗██╔════╝&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;           ██║   ██║███████╗&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;           ██║   ██║╚════██║&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;           ╚██████╔╝███████║&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 0.05</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;            ╚═════╝ ╚══════╝&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AZUL}TempleOS Virtual Machine Launcher Created by
+Drastick &amp; Ex3cutor76${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e
+&quot;${AMARELO}=========================================${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== PRIMEIRA VERIFICAÇÃO RVNC =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">first_run_check()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ if [ ! -f &quot;$CONFIG_FILE&quot; ]; then</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   clear</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo -e &quot;${AMARELO}RVNC Viewer está instalado?${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo &quot;1 - Sim&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo &quot;2 - Não&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   read -p &quot;Escolha: &quot; resp</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   read -p &quot;Tem certeza :/? (s/n): &quot; confirm</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   if [[ &quot;$confirm&quot; == &quot;s&quot; || &quot;$confirm&quot;
+== &quot;S&quot; ]]; then</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+     echo &quot;ok&quot; &gt; &quot;$CONFIG_FILE&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+     echo -e &quot;${VERDE}Configuração salva!${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+     sleep 1</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   else</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+     echo -e &quot;${VERMELHO}Cancelado, escolha novamente na próxima
+execução${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+     sleep 1</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   fi</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ fi</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== START VM =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">start_vm()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ RAM=&quot;$1&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ [[ -z &quot;$RAM&quot; ]] &amp;&amp; RAM=&quot;$RAM_DEFAULT&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ if ! [[ &quot;$RAM&quot; =~ ^[0-9]+$ ]]; then</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo -e &quot;${VERMELHO}RAM inválida${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   return</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ fi</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ logo</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ loading_bar</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AZUL}Verificando ISO...${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ if [[ ! -f &quot;$ISO&quot; ]]; then</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo -e &quot;${AMARELO}Baixando...${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   wget -O &quot;$ISO&quot;
+https://templeos.org/Downloads/TempleOS.ISO || return</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ fi</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ pkill -f qemu-system-x86_64 2&gt;/dev/null</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ PORT=5900</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ DISPLAY=0</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ while nc -z 127.0.0.1 $PORT &gt;/dev/null 2&gt;&amp;1; do</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   PORT=$((PORT+1))</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   DISPLAY=$((DISPLAY+1))</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ done</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${VERDE}Porta $PORT | RAM ${RAM}MB${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ qemu-system-x86_64 \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -m &quot;${RAM}M&quot; \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -cpu qemu64 \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -cdrom &quot;$ISO&quot; \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -boot d \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -vga std \</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ -vnc 127.0.0.1:$DISPLAY &gt;/dev/null 2&gt;&amp;1 &amp;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ sleep 2</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ if ! pgrep -f qemu-system-x86_64 &gt;/dev/null; then</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   echo -e &quot;${VERMELHO}Erro ao iniciar VM${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   return</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ fi</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AZUL}Aguardando VNC...${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ for i in {1..30}; do</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   nc -z 127.0.0.1 $PORT &amp;&amp; break</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   sleep 1</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ done</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${VERDE}Abrindo VNC...${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ am start -a android.intent.action.VIEW -d vnc://127.0.0.1:$PORT</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== FUNÇÃO PARA ABRIR PLAY STORE MANUALMENTE :| =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">open_playstore()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}Abrindo Play Store para instalar o RVNC
+Viewer...${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ am start -a android.intent.action.VIEW -d
+https://play.google.com/store/apps/details?id=com.realvnc.viewer.android</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${VERDE}Quando instalar, volte ao menu para iniciar a
+VM.${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">stop_vm()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ pkill -f qemu-system-x86_64 2&gt;/dev/null &amp;&amp; echo -e
+&quot;${VERDE}VM parada${RESET}&quot; || echo -e &quot;${VERMELHO}Nenhuma
+VM${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">status_vm()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ pgrep -f qemu-system-x86_64 &gt;/dev/null &amp;&amp; echo -e
+&quot;${VERDE}Rodando${RESET}&quot; || echo -e
+&quot;${VERMELHO}Parada${RESET}&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">custom_ram()
+{</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ read -p &quot;RAM em MB: &quot; RAM</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ start_vm &quot;$RAM&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">}</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">#
+===== EXECUÇÃO =====</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">first_run_check</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">while
+true; do</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ logo</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}1${RESET} Iniciar VM&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}2${RESET} RAM personalizada&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}3${RESET} Parar VM&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}4${RESET} Status da VM&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}5${RESET} Instalar RVNC Viewer (Play Store)&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo -e &quot;${AMARELO}6${RESET} Sair&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ read -p &quot;Escolha: &quot; opt</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ case $opt in</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   1) start_vm ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   2) custom_ram ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   3) stop_vm ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   4) status_vm ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   5) open_playstore ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   6) exit ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+   *) echo -e &quot;${VERMELHO}Inválido${RESET}&quot; ;;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ esac</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ echo &quot;&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">
+ read -p &quot;ENTER para continuar...&quot;</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font color="#81d41a">done</font></p>
+</body>
+</html>
